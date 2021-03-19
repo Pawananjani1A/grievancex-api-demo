@@ -2,20 +2,15 @@ import useSWR from 'swr';
 
 import {getUsers} from "../actions/user";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+
 
 const Index = (props) =>{
  
 
-// const { data, error } = useSWR(
-//     '/api/user',
-//     fetcher
-//   );
 
-  // console.log(props);
-  if (error) return 'An error has occurred.';
-  if (!data) return 'Loading...';
-  return <code>{JSON.stringify(data, null, 2)}</code>;
+
+  
+  return <code>{JSON.stringify(props.users, null, 2)}</code>;
 }
 
 
